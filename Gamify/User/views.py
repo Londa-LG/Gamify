@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .lib import math
 
 def Registration(request):
     return render(request,'User/Register.html')
