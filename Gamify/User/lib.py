@@ -1,5 +1,6 @@
+import datetime
 
-def math(x,y):
-    anw = x + y
-    return anw
+def Date():
+    td = datetime.date.today()
+    return td
 

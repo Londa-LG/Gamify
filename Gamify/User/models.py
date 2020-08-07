@@ -1,7 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
+from status.models import Reward, Challenge
 
 class Status(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    challenge = models.OneToOneField(Challenge, on_delete=models.CASCADE)
+    rewards = models.OneToOneField(Reward, on_delete=models.CASCADE)
+    acc_date = models.DateField(default=1)
+
+    age = models.IntegerField(default=1)
     level = models.IntegerField(default=1)
     job = models.CharField(max_length=100,default="None")
     title = models.CharField(max_length=100,default="None")
@@ -14,9 +21,6 @@ class Status(models.Model):
     class Meta:
         verbose_name_plural = "Status"
 
-class Age(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    age = models.IntegerField(default=1)
-
     def __str__(self):
-        return f'{self.user.username}'
+        return self.title
+
