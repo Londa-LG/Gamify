@@ -2,7 +2,7 @@ from django.db import models
 from inventory.models import Inventory
 
 class Item(models.Model):
-    storage = models.OneToOneField(Inventory,on_delete=models.CASCADE)
+    storage = models.ForeignKey(Inventory,default=1, on_delete=models.SET_DEFAULT)
     name = models.CharField(max_length=100)
     level = models.IntegerField()
     effects = models.TextField(max_length=100)

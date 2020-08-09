@@ -4,10 +4,11 @@ from status.models import Reward, Challenge
 
 class Status(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    challenge = models.OneToOneField(Challenge, on_delete=models.CASCADE)
-    rewards = models.OneToOneField(Reward, on_delete=models.CASCADE)
+    challenge = models.ForeignKey(Challenge, default=1, on_delete=models.SET_DEFAULT)
+    rewards = models.ForeignKey(Reward, default=1, on_delete=models.SET_DEFAULT)
     acc_date = models.DateField(default=1)
 
+    character  = models.CharField(default=1, max_length=100)
     age = models.IntegerField(default=1)
     level = models.IntegerField(default=1)
     job = models.CharField(max_length=100,default="None")
@@ -22,5 +23,5 @@ class Status(models.Model):
         verbose_name_plural = "Status"
 
     def __str__(self):
-        return self.title
+        return self.character
 
