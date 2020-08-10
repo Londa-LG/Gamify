@@ -5,12 +5,10 @@ from django.contrib.auth.models import User
 
 class User_Registration(UserCreationForm):
     email = forms.EmailField()
-    age = forms.IntegerField()
     class Meta:
         model = User
         fields = [
             'username',
-            'age',
             'email',
             'password1',
             'password2',

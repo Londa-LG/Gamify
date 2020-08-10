@@ -5,5 +5,12 @@ Register
 {% endblock title %}
 
 {% block content %}
-<h1>Welcome to the registration page now register</h1>
+    <section class="container">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn blue white-text">Register</button>
+        </form>
+        <h3 class="flow-text">If you already have an account <a href="#">Login</a> instead</h3>
+    </section>
 {% endblock content %}
