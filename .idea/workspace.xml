@@ -10,8 +10,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -30,13 +30,14 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Gamify/User" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Londa\Documents\GitHub\Gamify\Gamify\User" />
+      <recent name="C:\Users\Londa\Documents\GitHub\Gamify\Gamify" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Londa\Documents\GitHub\Gamify\Gamify\User" />
       <recent name="C:\Users\Londa\Documents\GitHub\Gamify\Gamify\charts" />
       <recent name="C:\Users\Londa\Documents\GitHub\Gamify\Gamify\character" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Londa\Documents\GitHub\Gamify\Gamify" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -53,10 +54,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="379" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1597030809208">
+    <state x="379" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1597131257118">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="379" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1597030809208" />
+    <state x="379" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1597131257118" />
     <state x="4" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1597031404050">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

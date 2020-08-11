@@ -14,7 +14,7 @@ class User_Registration(UserCreationForm):
             'password2',
         ]
         widgets = {
-            'username': forms.TextInput(attrs={"type":"text"}),
+            'username': forms.TextInput(attrs={"type":"text", "class":" white-text"}),
             'email': forms.TextInput(attrs={"type":"text"}),
             'password1': forms.TextInput(attrs={"type": "text"}),
             'password2': forms.TextInput(attrs={"type": "text"}),

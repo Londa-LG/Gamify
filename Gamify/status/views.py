@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def PlayerView(request):
+    return render(request,'status/Status.html')
