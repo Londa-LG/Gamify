@@ -1,11 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
-from status.models import Reward, Challenge
+from status.models import Reward, Challenge_Mind, Challenge_Body, Challenge_Skill
 
 class Status(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    challenge = models.ForeignKey(Challenge, default=1, on_delete=models.SET_DEFAULT)
-    rewards = models.ForeignKey(Reward, default=1, on_delete=models.SET_DEFAULT)
+    challenge_body = models.ForeignKey(Challenge_Body, default=1, on_delete=models.SET_DEFAULT)
+    challenge_mind = models.ForeignKey(Challenge_Mind, default=1, on_delete=models.SET_DEFAULT)
+    challenge_skill = models.ForeignKey(Challenge_Skill, default=1, on_delete=models.SET_DEFAULT)
     acc_date = models.DateField(default=1)
 
     character  = models.CharField(default=1, max_length=100)

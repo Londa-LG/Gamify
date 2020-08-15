@@ -5,15 +5,15 @@ Register
 {% endblock title %}
 
 {% block content %}
+<div class="container">
     <section class="card-panel">
         {% load static %}
-        <img class="circle responsive-img" src="{% static 'User/230-2301779_classified-stamp-png.png' %}" alt="default-profile image">
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" class="btn blue white-text">Register</button>
-            <h5 class="flow-text">If you already have an account <a href="#">Login</a> instead</h5>
+            <h5 class="flow-text">Already have an account? <a href="{% url 'User:login' %}">Login</a></h5>
         </form>
-
     </section>
+</div>
 {% endblock content %}

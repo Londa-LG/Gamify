@@ -1,7 +1,6 @@
 import datetime
 from .models import Status
 from inventory.models import Inventory
-from status.models import Challenge, Reward, Item
 from django.contrib.auth.models import User
 
 def Date():

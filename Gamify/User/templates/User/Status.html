@@ -1,0 +1,107 @@
+{% extends 'User/base.html' %}
+
+{% block title %}
+Status
+{% endblock title %}
+
+{% block sidenav %}
+{% load static %}
+<ul id="slide-out" class="sidenav sidenav-fixed">
+    <li class="user-view">
+        <div class="background" style="background: #00acc1;"></div>
+        <img class="circle" src="{% static 'User/default.png' %}">
+        <span class="name white-text">Name: {{user.username}}</span>
+        <span class="title white-text">Title: {{user.status.title}}</span>
+    </li>
+    <div class="divider"></div>
+    <li>
+        <a href="{% url 'User:logout' %}">Logout</a>
+    </li>
+</ul>
+{% endblock sidenav %}
+
+{% block content %}
+<div class="row hide-on-med-and-down">
+    <div class="col s12 m2 offset-m3">
+        <div class="card-panel red accent-2">
+            <h3 class="flow-text white-text center-align ">Strength</h3>
+            <div class="divider"></div>
+            <h5 class="flow-text white-text center-align ">{{status.strength}}</h5>
+        </div>
+    </div>
+    <div class="col s12 m2 ">
+        <div class="card-panel teal accent-4">
+            <h3 class="flow-text white-text center-align">Vitality</h3>
+            <div class="divider"></div>
+            <h5 class="flow-text white-text center-align">{{status.vitality}}</h5>
+        </div>
+    </div>
+    <div class="col s12 m2 ">
+        <div class="card-panel light-blue darken-4">
+            <h3 class="flow-text white-text center-align">Agility</h3>
+            <div class="divider"></div>
+            <h5 class="flow-text white-text center-align">{{status.agility}}</h5>
+        </div>
+    </div>
+    <div class="col s12 m2 ">
+        <div class="card-panel yellow darken-2">
+            <h3 class="flow-text white-text center-align">Intelligence</h3>
+            <div class="divider"></div>
+            <h5 class="flow-text white-text center-align">{{status.intelligence}}</h5>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12 m9 offset-m3">
+        <div class="card-panel center-align cyan darken-1">
+            <h3 class="flow-text white-text">Challenges</h3>
+            <div class="row center">
+                <div class="col s4">
+                    <div class="card-panel center-align yellow darken-2">
+                        <h4 class="flow-text white-text">Mind</h4>
+                        <div class="divider"></div>
+                        <a class=" btn-flat white-text modal-trigger" href="#modal1">View challenge</a>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="card-panel center-align red accent-2">
+                         <h4 class="flow-text white-text">Body</h4>
+                        <div class="divider"></div>
+                        <a class=" btn-flat white-text modal-trigger" href="#modal1">View challenge</a>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="card-panel center-align orange darken-4">
+                        <h4 class="flow-text white-text">Skill</h4>
+                        <div class="divider"></div>
+                        <a class=" btn-flat white-text modal-trigger" href="#modal1">View challenge</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>{{status.challenge_mind.name}}</h4>
+        <br/>
+        <p>{{status.challenge_mind.details}}</p>
+    </div>
+</div>
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>{{status.challenge_body.name}}</h4>
+        <br/>
+        <p>{{status.challenge_body.details}}</p>
+    </div>
+</div>
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h4>{{status.challenge_body.name}}</h4>
+        <br/>
+        <p>{{status.challenge_body.details}}</p>
+    </div>
+</div>
+{% endblock content %}

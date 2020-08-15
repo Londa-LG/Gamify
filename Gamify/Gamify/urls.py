@@ -15,11 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from status import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('User.urls')),
-    path('user/', include('User.urls')),
-    path('status/', views.PlayerView, name='status'),
+    path('',include('User.urls'), name='home'),
 ]

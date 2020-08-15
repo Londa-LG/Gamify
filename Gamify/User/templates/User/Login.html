@@ -11,13 +11,16 @@ Login
 <br/>
 <br/>
 <br/>
-<section class="card blue darken-4">
-    <div class="card-content">
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn blue">Login</button>
-        </form>
-    </div>
-</section>
+<div class="container">
+    <section class="card">
+        <div class="card-content">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn blue">Login</button>
+                <h5>Don't have an account? <a href="{% url 'User:register' %}">Register</a></h5>
+            </form>
+        </div>
+    </section>
+</div>
 {% endblock content %}

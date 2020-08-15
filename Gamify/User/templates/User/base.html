@@ -13,20 +13,47 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
         integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <!--Charts.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 </head>
 
-<body style="background-color: #03a9f4;">
+<body>
     <header>
-
+        <nav class="cyan darken-1">
+            <div class="nav-wrapper">
+                <div class="container">
+                    <span class="brand-logo center "><a href="/">Be more</a></span>
+                </div>
+            </div>
+        </nav>
+        {% block sidenav %}{% endblock sidenav %}
     </header>
     <br/>
     <br/>
-    <main class="container">
+{% if messages %}
+    {% for message in messages %}
+      <script>M.toast({html: "{{message}}", displayLength:2000});</script>
+    {% endfor %}
+{% endif %}
+    <main>
         {% block content %} {% endblock content %}
     </main>
 
-    <footer>
+     <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
-    </footer>
+    <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+            $('.modal').modal();
+        });
+    </script>
+
 </body>
 </html>

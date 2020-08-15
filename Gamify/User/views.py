@@ -1,11 +1,18 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from .forms import User_Registration
-from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
-from .lib import CreateInventory, CreatePlayer, BasicItem
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login, logout, authenticate
 
+from .forms import User_Registration
+
+
+@login_required
+def PlayerView(request):
+    stats = request.user.status
+    user = request.user
+    content = {'status': stats, 'user': user}
+    return render(request, 'User/Status.html', content)
 
 def Registration(request):
     if request.method == 'POST':
@@ -15,9 +22,7 @@ def Registration(request):
             username = form.cleaned_data.get('username')
             login(request,user)
             messages.success(request,f'{username} account created')
-            CreatePlayer(username)
-            CreateInventory(username)
-            BasicItem(username)
+            return redirect('/Status/')
         else:
             for msg in form.error_messages:
                 messages.error(request,f'{msg}:{form.error_messages[msg]}')
@@ -25,24 +30,28 @@ def Registration(request):
     content = {'form': form}
     return render(request,'User/Register.html',content)
 
+@login_required
+def Logout(request):
+    logout(request)
+    messages.info(request,'Logout successful')
+    return redirect('/')
+
 def Login(request):
     if request.method == "POST":
-        form = AuthenticationForm(request,request.POST)
+        form = AuthenticationForm(request, request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
-            user = authenticate(username= username, password=password)
+            user = authenticate(username=username, password=password)
             if user is not None:
-                login(request,user)
-                messages.info(request,'Login successful')
+                login(request, user)
+                messages.info(request, f"You are now logged in as {username}")
+                return redirect("Status/")
             else:
-                for msg in form.error_messages:
-                    messages.error(request,f"{msg}:{form.error_messages[msg]}")
+                messages.error(request, "Invalid username or password.")
+        else:
+            messages.error(request, "Invalid username or password.")
     form = AuthenticationForm()
     content = {'form': form}
-    return render(request,'User/Login.html',content)
+    return render(request, 'User/Login.html', content)
 
-def logout(request):
-    logout(request)
-    messages.info(request,'Logout successful')
-    return HttpResponse('<h1>This is the Logout Page')
