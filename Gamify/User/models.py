@@ -5,8 +5,11 @@ from status.models import Reward, Challenge_Mind, Challenge_Body, Challenge_Skil
 class Status(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     challenge_body = models.ForeignKey(Challenge_Body, default=1, on_delete=models.SET_DEFAULT)
+    body_challenge_status = models.BooleanField(default=False)
     challenge_mind = models.ForeignKey(Challenge_Mind, default=1, on_delete=models.SET_DEFAULT)
+    mind_challenge_status = models.BooleanField(default=False)
     challenge_skill = models.ForeignKey(Challenge_Skill, default=1, on_delete=models.SET_DEFAULT)
+    skill_challenge_status = models.BooleanField(default=True)
     acc_date = models.DateField(default=1)
 
     character  = models.CharField(default=1, max_length=100)
@@ -24,5 +27,5 @@ class Status(models.Model):
         verbose_name_plural = "Status"
 
     def __str__(self):
-        return self.character
+        return self.user.username
 

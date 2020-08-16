@@ -1,11 +1,21 @@
+import datetime
+from .lib import AssignPoints
+from .forms import User_Registration
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
 
-from .forms import User_Registration
+from datetime import date
+from datetime import timedelta
 
+var = 0
+
+@login_required
+def Challenge(request):
+    AssignPoints(request)
+    return redirect('/Status/')
 
 @login_required
 def PlayerView(request):
