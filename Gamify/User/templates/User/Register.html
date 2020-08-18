@@ -10,6 +10,7 @@ Register
         {% load static %}
         <form method="POST">
             {% csrf_token %}
+            <i class="large material-icons center-align">account_circle</i>
             {{ form.as_p }}
             <button type="submit" class="btn blue white-text">Register</button>
             <h5 class="flow-text">Already have an account? <a href="{% url 'User:login' %}">Login</a></h5>

@@ -1,5 +1,4 @@
-import datetime
-from .lib import AssignPoints
+from .lib import AssignPoints, CreateStatus
 from .forms import User_Registration
 from django.contrib import messages
 from django.shortcuts import render, redirect
@@ -7,10 +6,6 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
 
-from datetime import date
-from datetime import timedelta
-
-var = 0
 
 @login_required
 def Challenge(request):
@@ -31,6 +26,7 @@ def Registration(request):
             user = form.save()
             username = form.cleaned_data.get('username')
             login(request,user)
+            CreateStatus(username)
             messages.success(request,f'{username} account created')
             return redirect('/Status/')
         else:

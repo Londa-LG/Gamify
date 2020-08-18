@@ -9,7 +9,7 @@ Status
 <ul id="slide-out" class="sidenav sidenav-fixed">
     <li class="user-view">
         <div class="background" style="background: #00acc1;"></div>
-        <img class="circle" src="{% static 'User/default.png' %}">
+        <i class="large material-icons">account_circle</i>
         <span class="name white-text">Name: {{user.username}}</span>
         <span class="title white-text">Title: {{user.status.title}}</span>
     </li>
@@ -81,7 +81,7 @@ Status
                         </div>
                     </div>
                 </div>
-                <a class="btn-large waves-effect waves-light light-blue darken-4" href="{% url 'User:complete' %}">Challenges Complete</a>
+                <a class="btn-large waves-effect waves-light teal" href="{% url 'User:complete' %}">Challenges Complete</a>
             </div>
         </div>
     </div>
@@ -169,6 +169,7 @@ Status
                         </div>
                     </div>
                 </div>
+                <a class="btn-large waves-effect waves-light light-blue darken-4" href="{% url 'User:complete' %}">Challenges Complete</a>
             </div>
         </div>
     </div>
@@ -255,6 +256,7 @@ Status
                         </div>
                     </div>
                 </div>
+                <a class="btn-large waves-effect waves-light light-blue darken-4" href="{% url 'User:complete' %}">Challenges Complete</a>
             </div>
         </div>
     </div>
