@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'n2q(^rl%x8h8lc1%_4406oh%cen9%gd%lw1k)w%==w(km(j-g%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gamify-londa.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
