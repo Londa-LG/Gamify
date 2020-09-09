@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3548814e-3e16-4e73-a78b-6a35f85674d4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamify/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Gamify/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +29,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Gamify/User" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gamify-deploy" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -61,10 +60,14 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="113" y="190" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1598003492168" />
-    <state x="379" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1597946316453">
+    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1598212120706">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="379" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1597946316453" />
+    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1598212120706" />
+    <state x="379" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1598212102231">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="379" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1598212102231" />
     <state x="4" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1597480033034">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
